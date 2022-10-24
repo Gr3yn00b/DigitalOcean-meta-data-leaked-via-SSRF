@@ -1,0 +1,149 @@
+Digital ocean
+
+droplet_id	:	201387689
+
+auth_key: 434a6f827d1bfbc42ea67fa4a379340b
+
+Region: sfo3
+
+0	:	ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6e2iPuhYE8brVbqGpSbW5e0/qlAeCNsur/SUAOP9e0LwDjyS0NxuLLLXxynQembZGOiJrJA2YtO1k2+z7PmHCZeEgTeMY/fB4iYtxQHxBY5LgpMOhIhgWdK66TRNGVMFk+WQfbZWUGqy7sXPGBeGMObbHfvYC+jYJcT1NjFj6FCHwzyTIIVGMNSO+QGniW3BpnIXlL4MBaXB4+J5OPKf7Bmz+89W41Wbg0IMijx032Mja2m0WTMvJzjfw+2fMtGd+V0XOa+tyHRZrJqTCdjYi5AXjaoh5PkzIe1O19swjVzJXt2OxPUSjIOpo5qo3jXhmEsOusGcQDDpZzS9hqo2B dainik@dainikauth_key	:	434a6f827d1bfbc42ea67fa4a379340b
+
+region	:	sfo3
+
+	interfaces		{1}
+
+	floating_ip		{1}
+
+	ipv4		{1}
+
+active	:	false
+
+	reserved_ip		{1}
+
+	ipv4		{1}
+
+active	:	false
+
+	dns		{1}
+
+	nameservers		[2]
+
+0	:	67.207.67.3
+
+1	:	67.207.67.2
+
+	tags		[1]
+
+0	:	Tools
+
+	features		{1}
+
+dhcp_enabled	:	false
+
+modify_index	:	2081012
+
+
+{
+
+    "droplet_id": 158338441,
+
+    "hostname": "centos-s-1vcpu-2gb-nyc1-01",
+
+    "vendor_data": "Content-Type: multipart/mixed; boundary=\"===============8645434374073493512==\"\nMIME-Version: 1.0\n\n--===============8645434374073493512==\nMIME-Version: 1.0\nContent-Type: text/cloud-config; charset=\"us-ascii\"\nContent-Transfer-Encoding: 7bit\nContent-Disposition: attachment; filename=\"cloud-config\"\n\n#cloud-config\ndisable_root: false\nmanage_etc_hosts: true\n\nssh_pwauth: true\n\nnetwork:\n    config: disabled\n\nlocale_configfile: /etc/sysconfig/i18n\n\ncloud_init_modules:\n - migrator\n - seed_random\n - bootcmd\n - write-files\n - [ growpart, always ]\n - [ resizefs, always ]\n - set_hostname\n - [ update_hostname, once-per-instance ]\n - [ update_etc_hosts, once-per-instance ]\n - ca-certs\n - rsyslog\n - users-groups\n - ssh\n\ncloud_config_modules:\n - emit_upstart\n - disk_setup\n - mounts\n - ssh-import-id\n - locale\n - set-passwords\n - package-update-upgrade-install\n - landscape\n - timezone\n - puppet\n - chef\n - salt-minion\n - mcollective\n - disable-ec2-metadata\n - runcmd\n - resolv-conf\n\ncloud_final_modules:\n - rightscale_userdata\n - scripts-vendor\n - scripts-per-once\n - scripts-per-boot\n - scripts-per-instance\n - scripts-user\n - ssh-authkey-fingerprints\n - keys-to-console\n - phone-home\n - final-message\n - power-state-change\n\nsystem_info:\n  distro: rhel\n  paths:\n    cloud_dir: /var/lib/cloud\n    templates_dir: /etc/cloud/templates\n  ssh_svcname: sshd\n\n\n--===============8645434374073493512==\nMIME-Version: 1.0\nContent-Type: text/cloud-boothook; charset=\"us-ascii\"\nContent-Transfer-Encoding: 7bit\nContent-Disposition: attachment; filename=\"entropy-seed\"\n\n#!/bin/sh -x\n# DigitalOcean Entropy Seed script\nlogger -t DigitalOcean 'adding random seed to /dev/urandom'\n(base64 -d <<EOE\n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\n\nEOE\n) > /dev/urandom \n\n\n--===============8645434374073493512==\nMIME-Version: 1.0\nContent-Type: text/cloud-boothook; charset=\"us-ascii\"\nContent-Transfer-Encoding: 7bit\nContent-Disposition: attachment; filename=\"digitalocean_fixups\"\n\n#!/bin/sh\n\n# These are udev rules and scripts that are placed here for the sake of readability \n# later in this script.\nno_systemd_mount_rules=$(cat <<EOM\n# Only try to automount DO block volumes.\nSUBSYSTEM!=\"block\", GOTO=\"do_automount_end\"\nENV{ID_VENDOR}!=\"DO\", GOTO=\"do_automount_end\"\nENV{ID_MODEL}!=\"Volume\", GOTO=\"do_automount_end\"\n# Only automount on the \"add\" action.\nACTION!=\"add\", GOTO=\"do_automount_end\"\n# Only try to automount filesystems we know about.\nENV{ID_FS_TYPE}!=\"ext4|xfs\", GOTO=\"do_automount_end\"\n\n# Create a temporary mountpoint and temporary location for the first-mount script.\nIMPORT{program}=\"/bin/sh -c 'echo TMP_MOUNT_DIR=\\$(mktemp -d -p /mnt .do-first-mount-XXXXXXXXX)'\"\n# Handle temporary mountpoint creation failure.\nENV{TMP_MOUNT_DIR}==\"\", GOTO=\"do_automount_end\"\nIMPORT{program}=\"/bin/sh -c 'echo TMP_SCRIPT=\\$(mktemp -t .do-first-mount-XXXXXXXXX.sh)'\"\n# Handle temporary script location creation failure.\nENV{TMP_SCRIPT}==\"\", PROGRAM=\"/bin/sh -c '/bin/rmdir %E{TMP_MOUNT_DIR} || exit 0'\", GOTO=\"do_automount_end\"\n\n# Mount the volume at the temp mountpoint and copy the script off, then unmount.\nRUN{program}+=\"/bin/mount -o ro /dev/%k %E{TMP_MOUNT_DIR}\"\nRUN{program}+=\"/bin/sh -c '/bin/cp %E{TMP_MOUNT_DIR}/.first-mount.sh %E{TMP_SCRIPT} || exit 0'\"\nRUN{program}+=\"/bin/umount %E{TMP_MOUNT_DIR}\"\nRUN{program}+=\"/bin/rmdir %E{TMP_MOUNT_DIR}\"\n\n# Run the first-mount script. If it didn't exist this will be a no-op.\nRUN{program}+=\"/bin/sh %E{TMP_SCRIPT} '%E{ID_SERIAL}' '%E{ID_FS_TYPE}' '%E{ID_SERIAL_SHORT}' '%E{ID_FS_UUID}' '%E{ID_FS_LABEL}'\"\n\n# Clean up.\nRUN{program}+=\"/bin/rm %E{TMP_SCRIPT}\"\n\n# Finally, try and mount the volume. On first mount this will fail, but that's\n# OK because the volume was already mounted by the first-mount script.\nRUN{program}+=\"/bin/sh -c '/bin/mount /dev/%k || exit 0'\"\n\nLABEL=\"do_automount_end\"\nEOM\n)\n\nsystemd_mount_rules=$(cat <<EOM\n# Only try to automount DO block volumes.\nSUBSYSTEM!=\"block\", GOTO=\"do_automount_end\"\nENV{ID_VENDOR}!=\"DO\", GOTO=\"do_automount_end\"\nENV{ID_MODEL}!=\"Volume\", GOTO=\"do_automount_end\"\n# Only automount on the \"change\" action.\nACTION!=\"change\", GOTO=\"do_automount_end\"\n# Only try to automount filesystems we know about.\nENV{ID_FS_TYPE}!=\"ext4|xfs\", GOTO=\"do_automount_end\"\n\n# Create a temporary mountpoint and temporary location for the first-mount script.\nIMPORT{program}=\"/bin/sh -c 'echo TMP_MOUNT_DIR=\\$(mktemp -d -p /mnt .do-first-mount-XXXXXXXXX)'\"\n# Handle temporary mountpoint creation failure.\nENV{TMP_MOUNT_DIR}==\"\", GOTO=\"do_automount_end\"\nIMPORT{program}=\"/bin/sh -c 'echo TMP_SCRIPT=\\$(mktemp -t .do-first-mount-XXXXXXXXX.sh)'\"\n# Handle temporary script location creation failure.\nENV{TMP_SCRIPT}==\"\", PROGRAM=\"/bin/sh -c '/bin/rmdir %E{TMP_MOUNT_DIR} || exit 0'\", GOTO=\"do_automount_end\"\n\nRUN{program}+=\"/var/lib/cloud/scripts/per-instance/systemd_automount.sh %k %E{TMP_MOUNT_DIR} %E{TMP_SCRIPT} '%E{ID_SERIAL}' '%E{ID_FS_TYPE}' '%E{ID_SERIAL_SHORT}' '%E{ID_FS_UUID}' '%E{ID_FS_LABEL}'\"\n\nLABEL=\"do_automount_end\"\nEOM\n)\n\nsystemd_mount_script=$(cat <<EOM\n#!/bin/bash\n\nDEVICE=\\$1\nTMP_MOUNT_DIR=\\$2\nTMP_SCRIPT=\\$3\nID_SERIAL=\\$4\nID_FS_TYPE=\\$5\nID_SERIAL_SORT=\\$6\nID_FS_UUID=\\$7\nID_FS_LABEL=\\$8\n\n# If device is blank or unset exit. Can happen on first start\nif [ -z \"\\$DEVICE\" ]; then\n    exit 0\nfi\n# If mount doesn't work exit (such as it can't open device or device doesn't exist)\n/usr/bin/systemd-mount --fsck=no --automount=no -o ro /dev/\\$DEVICE \\$TMP_MOUNT_DIR || exit 0\nFIRST_MNT=\\$TMP_MOUNT_DIR/.first-mount.sh\n# If this isn't a bulkhead formatted drive clean up\nif [ ! -f \"\\$FIRST_MNT\"]; then\n    /usr/bin/systemd-umount \\$TMP_MOUNT_DIR\n    /bin/rmdir \\$TMP_MOUNT_DIR\n    exit 0\nfi\n/bin/cp \"\\$FIRST_MNT\" \\$TMP_SCRIPT\n/usr/bin/systemd-umount \\$TMP_MOUNT_DIR\n/bin/rmdir \\$TMP_MOUNT_DIR\n\n# Run the first-mount script. If it didn't exist this will be a no-op.\n/bin/sh \\$TMP_SCRIPT \\$ID_SERIAL \\$ID_FS_TYPE \\$ID_SERIAL_SHORT \\$ID_FS_UUID \\$ID_FS_LABEL\n\n# Clean up.\n/bin/rm \\$TMP_SCRIPT\n\n# Finally, try and mount the volume. On first mount this will fail, but that's\n# OK because the volume was already mounted by the first-mount script.\n/usr/bin/systemctl start mnt-\\${ID_SERIAL_SHORT//-/_}.mount || exit 0\nEOM\n)\n\n# Disable the locale warning: by default imported cloud-images check the default\n# local and give a warning about invalid locales. The following line disable\n# the warning.\n\n# do not assume that /etc/skel exists\nif [ -d /etc/skel ]; then\n    touch /etc/skel/.cloud-locale-test.skip\nfi\ntouch /root/.cloud-locale-test.skip\n\n# Disable Ubuntu MOTD\nif [ -f /etc/default/motd-news ]; then\n    sed -e \"s/ENABLED=1/ENABLED=0/g\" \\\n        -i /etc/default/motd-news\nfi\n\n# Fix buggy cloud-init routes for IPv6\nr6c=\"/etc/sysconfig/network-scripts/route6-eth0\"\nif [ -f \"${r6c}\" ]; then\n    sed -e \"s|::/::|default|g\" -i \"${r6c}\"\n    awk '/default via/{system(\"ip -6 route add default via \"$NF\" dev eth0\")}' \"${r6c}\"\nelif [ -d \"/etc/sysconfig/network-scripts\" -a -f \"/etc/network/interfaces\" ]; then\n    # This deals with a bug in Fedora 27 where the network interface is not set\n    # properly by Cloud-init.\n    i6gw=$(egrep -A3 'iface eth0:1 inet6 static' /etc/network/interfaces | awk '/gateway/{print$NF}')\n    if [ -n \"${i6gw}\" ]; then\n        ip -6 route add default via ${i6gw} dev eth0\n        cat > ${r6c} <<EOM\n# DigitalOcean: written by ConfigDrive customization.\ndefault via ${i6gw}\nEOM\n    fi\nfi\n\n# Fix screwy file permmissions on the system resolvers.\nchmod 0644 /etc/resolv.conf\n\n# Support automatic disk resizing per boot.\n# Only update /etc/hosts once per instance.\nmkdir -p /etc/cloud/cloud.cfg.d\ncat > /etc/cloud/cloud.cfg.d/90-digitalocean.cfg <<EOM\n####\n# DigitalOcean: this file was written via cloud-init and composed from /etc/cloud/cloud.cfg\n#               In order to support resize events, 'growpart' and 'resizefs' are run each boot.\n#               'update_etc_hosts' will be run only once per instance. To see the differences, run\n#               'diff -u /etc/cloud/cloud.cfg /etc/cloud/cloud.cfg.d/90-digitalocean.cfg'.\n#\n#               This file was written to support Droplet $(</sys/devices/virtual/dmi/id/product_serial) on $(date +%Y-%m-%d)\n####\n\nEOM\nsed -e \"s/- growpart$/- [ growpart, always ]/g\" \\\n    -e \"s/- resizefs$/- [ resizefs, always ]/g\" \\\n    -e \"s/- update_etc_hosts$/- [ update_etc_hosts, once-per-instance ]/g\" \\\n    /etc/cloud/cloud.cfg >> /etc/cloud/cloud.cfg.d/90-digitalocean.cfg\n\n# Fix for machine-id's being dubiously present\ncat > /var/lib/cloud/scripts/per-instance/machine_id.sh <<EOM\n#!/bin/bash\nCT=\\$(date +%s);\nFT=\\$(stat /etc/machine-id -c %Y);\nDIFF=\\$(expr \\$CT - \\$FT)\n# record timestamp on machine-id for testing\n# If /etc/machine_id is over 10m old on first-boot, delete it\nif [ -f /etc/machine-id ]; then\n    if [ \\$DIFF -lt 600 ]; then\n        exit 0\n    fi\nrm -rf /etc/machine-id\nfi\n\n# systemd will use dbus uudigen if its there\n# we need to reset this for Debain 9.\nif which dbus-uuidgen &> /dev/null; then\n    rm -rf /var/lib/dbus/machine-id\n    dbus-uuidgen --ensure=/var/lib/dbus/machine-id\nfi\n\nif which systemd-machine-id-setup &> /dev/null; then\n    rm -rf /etc/machine-id\n    systemd-machine-id-setup\nfi\nEOM\nchmod 0700 /var/lib/cloud/scripts/per-instance/machine_id.sh\n\n# DigitalOcean updated the vendor-data to better support various distributions.\n# This script makes it so older snapshots will work by restoring the default behavior\n# of cloud-init.\nif [ -e /etc/cloud/cloud.cfg.disabled ]; then\n    mv /etc/cloud/cloud.cfg /etc/cloud/cloud.cfg.d/99-digitalocean.cfg\n    mv /etc/cloud/cloud.cfg.disabled /etc/cloud/cloud.cfg\n    logger -t DigitalOcean \"restored default cloud-init behavior by renaming /etc/cloud/cloud.cfg.disabled to /etc/cloud/cloud.cfg\"\nfi\n\n# Newer versions of systemd-udevd behave badly when trying to run the original udev rules.\n# Using mount in udev is highly discouraged and behaves poorly when systemd-mount is available\n# The script enforces serialization of commands without changing udev settings\n# See BLOCK-1832\nif [ -d /etc/udev/rules.d ]; then\n    if command -v systemd-mount > /dev/null 2>&1 && command -v systemd-umount > /dev/null 2>&1; then\n        # Add udev rules to automount block storage volumes using systemd-mount.\n        echo \"$systemd_mount_rules\" > /etc/udev/rules.d/99-digitalocean-automount.rules\n        echo \"$systemd_mount_script\" > /var/lib/cloud/scripts/per-instance/systemd_automount.sh\n        chmod 0700 /var/lib/cloud/scripts/per-instance/systemd_automount.sh\n    else\n        # Add udev rules to automount block storage volumes.\n        echo \"$no_systemd_mount_rules\" > /etc/udev/rules.d/99-digitalocean-automount.rules\n    fi\n\n    # Some versions of systemd-udevd end up in a weird state when we add and\n    # trigger rules on-the-fly, as below. Restarting the service seems to\n    # resolve things. See BLOCK-1435 for details.\n    if command -v systemctl > /dev/null 2>&1; then\n        systemctl restart systemd-udevd.service\n    fi\n\n    # Load the newly-added udev rules and then manually trigger them to catch\n    # any automount volumes that were attached at boot.\n    if command -v udevadm > /dev/null 2>&1; then\n        udevadm control -R\n        if command -v systemd-mount > /dev/null 2>&1 && command -v systemd-umount > /dev/null 2>&1; then\n            udevadm trigger --action=change --subsystem-match=block\n        else\n            udevadm trigger --action=add --subsystem-match=block\n        fi\n    fi\nfi\n\n--===============8645434374073493512==\nMIME-Version: 1.0\nContent-Type: text/x-shellscript; charset=\"us-ascii\"\nContent-Transfer-Encoding: 7bit\nContent-Disposition: attachment; filename=\"install-do-agent\"\n\n#!/bin/sh\n#\n# This is a wrapper that ensures that the agent is only installed _once_ automatically\n# via cloud-init. Cloud-init 0.7.8 and earlier re-execute included URL's each boot.\n# This script ensures that the agent is only ever installed once.\n\ni_file=\"https://insights.nyc3.cdn.digitaloceanspaces.com/install.sh\"\ns_path=\"/var/lib/cloud/instance/sem\"\ns_file=\"${s_path}/do_agent\"\n\nmkdir -p ${s_path}\n\ntest -f ${s_file} && exit 0\n\nlogger -t DigitalOcean-Agent \"fetching and installing DigitalOcean monitoring agent\"\n\nwget --quiet -O ${s_file} ${i_file} ||\n    curl -sSL --output ${s_file} ${i_file}\n\nchmod 0755 ${s_file}\n\nif test -x ${s_file}; then\n    exec ${s_file} || logger -t DigitalOcean-Agent \"failed to install DigitalOcean monitoring agent\"\nfi\n\n--===============8645434374073493512==--\n\n",
+
+    "public_keys": [],
+
+    "auth_key": "62d8a8fff7767641469a24b1a8ec9954",
+
+    "region": "nyc1",
+
+    "interfaces": {
+
+        "public": [
+
+            {
+
+                "ipv4": {
+
+                    "ip_address": "157.245.138.39",
+
+                    "netmask": "255.255.240.0",
+
+                    "gateway": "157.245.128.1"
+
+                },
+
+                "ipv6": {
+
+                    "ip_address": "2604:A880:0400:00D0:0000:0000:4B51:A001",
+
+                    "cidr": 64,
+
+                    "gateway": "2604:A880:0400:00D0:0000:0000:0000:0001"
+
+                },
+
+                "anchor_ipv4": {
+
+                    "ip_address": "10.10.0.5",
+
+                    "netmask": "255.255.0.0",
+
+                    "gateway": "10.10.0.1"
+
+                },
+
+                "mac": "f2:6c:44:bd:5b:76",
+
+                "type": "public"
+
+            }
+
+        ]
+
+    },
+
+    "floating_ip": {
+
+        "ipv4": {
+
+            "active": false
+
+        }
+
+    },
+
+    "reserved_ip": {
+
+        "ipv4": {
+
+            "active": false
+
+        }
+
+    },
+
+    "dns": {
+
+        "nameservers": [
+
+            "67.207.67.2",
+
+            "67.207.67.3"
+
+        ]
+
+    },
+
+    "tags": null,
+
+    "features": {
+
+        "dhcp_enabled": false
+
+    },
+
+    "modify_index": 116606327
+
+}
+
